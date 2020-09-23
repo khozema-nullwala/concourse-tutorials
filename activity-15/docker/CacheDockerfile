@@ -1,0 +1,3 @@
+FROM maven:alpine
+WORKDIR app
+COPY ./cache ./cache

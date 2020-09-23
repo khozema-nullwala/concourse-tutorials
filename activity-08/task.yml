@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: 
+    repository: python
+    tag: rc-alpine3.10
+
+inputs:
+- name: concourse-tutorials
+- name: python-script
+
+run:
+  path: /bin/sh
+  args:
+  - concourse-tutorials/activity-08/script.sh

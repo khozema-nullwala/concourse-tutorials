@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: 
+    repository: ((cache_image))
+    tag: ((image_tag))
+
+inputs:
+- name: concourse-tutorials
+- name: simple-java-app
+- name: version
+
+outputs:
+- name: workspace
+
+run:
+  path: /bin/sh
+  args: 
+  - concourse-tutorials/activity-15/app_image_script.sh 

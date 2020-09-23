@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: 
+    repository: python
+    tag: rc-alpine3.10
+
+inputs:
+- name: concourse-tutorials
+- name: python-scripts
+
+# random number generated will be stored in this output directory
+# it will be used as an input to other task
+outputs:
+- name: random-numbers
+
+run:
+  path: /bin/sh
+  args:
+  - concourse-tutorials/activity-14/script.sh

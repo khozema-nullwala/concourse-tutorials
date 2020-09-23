@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: 
+    repository: alpine
+    tag: latest
+
+inputs:
+- name: random-numbers
+
+run:
+  path: cat
+  args:
+  - random-numbers/random-number.txt
